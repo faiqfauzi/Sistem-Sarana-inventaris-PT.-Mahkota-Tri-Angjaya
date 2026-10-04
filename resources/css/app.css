@@ -1,0 +1,1437 @@
+@import 'tailwindcss';
+@import "@tabler/core/dist/css/tabler.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+@import '@tabler/icons-webfont/dist/tabler-icons.min.css';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+.pagination-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 16px;
+}
+
+.pagination-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pagination-info {
+    font-size: 14px;
+    color: #6c757d;
+    white-space: nowrap;
+}
+
+.pagination-info strong {
+    color: #343a40;
+    font-weight: 600;
+}
+
+.pagination-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.pagination-btn {
+    width: 36px;
+    height: 36px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+
+    background: #fff;
+    color: #495057;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: all 0.15s ease;
+}
+
+.pagination-btn:hover {
+    background: #f8f9fa;
+    border-color: #adb5bd;
+    color: #212529;
+}
+
+.pagination-btn.active {
+    background: #206bc4;
+    border-color: #206bc4;
+    color: #fff;
+}
+
+.pagination-btn.disabled {
+    background: #f8f9fa;
+    color: #adb5bd;
+    cursor: not-allowed;
+}
+
+.pagination-dots {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 32px;
+    height: 36px;
+
+    color: #667085;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+.btn-icon {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+}
+
+.inventory-table {
+    min-width: 1300px;
+}
+
+
+/* ========================================
+   TEXT
+======================================== */
+
+.sidebar-link .nav-link-title {
+    display: block;
+
+    flex: 1;
+
+    text-align: left !important;
+
+    line-height: 1.35;
+}
+
+
+/* ========================================
+   HOVER
+======================================== */
+
+.sidebar-link:hover {
+    background: #f5f7fa;
+
+    color: #344054 !important;
+}
+
+.sidebar-link:hover .sidebar-icon {
+    color: #667085;
+}
+
+
+/* ========================================
+   ACTIVE
+======================================== */
+
+.sidebar-link.active {
+    background: rgba(var(--tblr-primary-rgb), 0.12);
+
+    color: var(--tblr-primary) !important;
+
+    font-weight: 600;
+}
+
+.sidebar-link.active .sidebar-icon {
+    color: var(--tblr-primary);
+}
+
+
+/* Garis indikator active */
+
+.sidebar-link.active::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 7px;
+    bottom: 7px;
+
+    width: 3px;
+
+    border-radius: 0 4px 4px 0;
+
+    background: var(--tblr-primary);
+}
+
+.sidebar-custom {
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+}
+
+
+/* ========================================
+   USER AVATAR
+======================================== */
+
+.navbar-user-avatar {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f0f2f5;
+
+    color: #667085;
+
+    font-size: 18px;
+}
+
+
+/* ========================================
+   USER INFO
+======================================== */
+
+.navbar-user-info {
+    min-width: 90px;
+}
+
+.navbar-user-name {
+    font-size: 13px;
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    color: #344054;
+}
+
+.navbar-user-role {
+    margin-top: 3px;
+
+    font-size: 11px;
+
+    line-height: 1.2;
+
+    color: #98a2b3;
+}
+
+.app-navbar {
+    width: 100%;
+    height: 64px;
+    background: #fff;
+    border-bottom: 1px solid #e6e8eb;
+}
+
+.app-navbar .navbar-custom {
+    height: 64px;
+    min-height: 64px;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* ========================================
+   CUSTOM APPLICATION LAYOUT
+======================================== */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+/* ========================================
+   SIDEBAR
+======================================== */
+
+.app-sidebar {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: red !important;
+}
+
+.app-sidebar .sidebar-custom {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.sidebar-inner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ========================================
+   MAIN AREA
+======================================== */
+
+.app-main {
+    flex: 1;
+    min-width: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: blue !important;
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.app-navbar {
+    width: 100%;
+    height: 64px;
+    min-height: 64px;
+    background: #ffffff;
+    border-bottom: 1px solid #e6e8eb;
+}
+
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.app-content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: yellow !important;
+}
+
+.app-content .page-body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* ========================================
+   FIX CONTENT AREA
+======================================== */
+
+.app-content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Pastikan page header tidak punya margin
+   yang menggeser seluruh area */
+
+.app-content > .page-header {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+
+/* Container utama halaman tetap punya
+   padding internal, bukan menggeser layout */
+
+.app-content > .page-header > .container-xl,
+.app-content > .container-xl {
+    width: 100%;
+}
+
+/* ========================================
+   MAIN APP LAYOUT
+======================================== */
+
+html,
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.page {
+    width: 100% !important;
+    min-height: 100vh;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/* ========================================
+   SIDEBAR
+======================================== */
+
+.sidebar-custom {
+    position: fixed !important;
+
+    left: 0 !important;
+    top: 0 !important;
+
+    width: 250px !important;
+    min-width: 250px !important;
+    height: 100vh !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: #ffffff;
+
+    border-right: 1px solid #e6e8eb;
+
+    overflow: hidden !important;
+
+    z-index: 1000;
+}
+
+
+/* ========================================
+   SIDEBAR LOGO
+======================================== */
+
+.sidebar-logo {
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 20px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    box-sizing: border-box;
+}
+
+.sidebar-logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+}
+.sidebar-company-logo {
+    display: block;
+
+    max-width: 170px;
+    max-height: 52px;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+}
+
+.sidebar-logo .navbar-brand {
+    width: 100%;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    justify-content: flex-start;
+}
+
+
+/* ========================================
+   SIDEBAR MENU
+======================================== */
+
+.sidebar-nav {
+    width: 100%;
+
+    margin: 0 !important;
+
+    padding: 30px 10px 0 !important;
+
+    box-sizing: border-box;
+}
+
+.sidebar-nav .nav-item {
+    width: 100%;
+
+    margin: 0 0 4px 0 !important;
+}
+
+
+/* ========================================
+   SIDEBAR LINK
+======================================== */
+
+.sidebar-link {
+    position: relative;
+
+    width: 100%;
+    min-height: 44px;
+
+    display: flex !important;
+    align-items: center;
+
+    margin: 0 !important;
+
+    padding: 10px 14px !important;
+
+    box-sizing: border-box;
+
+    border-radius: 7px;
+
+    color: #667085 !important;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    text-align: left !important;
+
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
+}
+
+.sidebar-link:hover {
+    background: #f5f7fa;
+
+    color: #344054 !important;
+}
+
+
+/* ========================================
+   SIDEBAR ICON
+======================================== */
+
+.sidebar-icon {
+    width: 30px;
+    min-width: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    font-size: 19px;
+
+    color: #98a2b3;
+}
+
+.sidebar-link:hover .sidebar-icon {
+    color: #667085;
+}
+
+
+/* ========================================
+   SIDEBAR TEXT
+======================================== */
+
+.sidebar-link .nav-link-title {
+    display: block;
+
+    flex: 1;
+
+    text-align: left !important;
+
+    line-height: 1.35;
+}
+
+
+/* ========================================
+   SIDEBAR ACTIVE
+======================================== */
+
+.sidebar-link.active {
+    background: rgba(var(--tblr-primary-rgb), 0.12);
+
+    color: var(--tblr-primary) !important;
+
+    font-weight: 600;
+}
+
+.sidebar-link.active .sidebar-icon {
+    color: var(--tblr-primary);
+}
+
+.sidebar-link.active::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 7px;
+    bottom: 7px;
+
+    width: 3px;
+
+    border-radius: 0 4px 4px 0;
+
+    background: var(--tblr-primary);
+}
+
+
+/* ========================================
+   PAGE WRAPPER
+======================================== */
+
+.page-wrapper {
+    width: calc(100% - 250px) !important;
+    min-width: 0;
+
+    min-height: 100vh;
+
+    margin-left: 250px !important;
+    padding: 0 !important;
+
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar-custom {
+    width: 100% !important;
+    min-height: 64px;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0;
+    border-bottom: 1px solid #e6e8eb;
+
+    border-radius: 0 !important;
+
+    background: #ffffff;
+}
+
+.navbar-custom .container-xl {
+    min-height: 64px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* ========================================
+   NAVBAR TITLE
+======================================== */
+
+.navbar-title {
+    display: flex;
+    align-items: center;
+
+    min-height: 64px;
+}
+
+.navbar-title-main {
+    font-size: 16px;
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    color: #182433;
+}
+
+
+/* ========================================
+   NAVBAR USER
+======================================== */
+
+.navbar-user {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 6px 10px;
+
+    border-radius: 8px;
+}
+
+.navbar-user:hover {
+    background: #f5f7fa;
+}
+
+.navbar-user-avatar {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f0f2f5;
+
+    color: #667085;
+
+    font-size: 18px;
+}
+
+.navbar-user-info {
+    min-width: 90px;
+}
+
+.navbar-user-name {
+    font-size: 13px;
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    color: #344054;
+}
+
+.navbar-user-role {
+    margin-top: 3px;
+
+    font-size: 11px;
+
+    line-height: 1.2;
+
+    color: #98a2b3;
+}
+
+/* ========================================
+   RESPONSIVE SIDEBAR
+======================================== */
+
+.sidebar-overlay {
+    display: none;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 767.98px) {
+
+    /* Sidebar keluar dari layar */
+
+    .sidebar-custom {
+        transform: translateX(-100%);
+
+        transition: transform 0.25s ease;
+
+        z-index: 1050;
+    }
+
+
+    /* Sidebar aktif */
+
+    .sidebar-custom.sidebar-open {
+        transform: translateX(0);
+    }
+
+
+    /* Content memakai seluruh layar */
+
+    .page-wrapper {
+        width: 100% !important;
+
+        margin-left: 0 !important;
+    }
+
+
+    /* Overlay */
+
+    .sidebar-overlay {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100vh;
+
+        background: rgba(0, 0, 0, 0.35);
+
+        z-index: 1040;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transition:
+            opacity 0.25s ease,
+            visibility 0.25s ease;
+    }
+
+
+    .sidebar-overlay.show {
+        opacity: 1;
+
+        visibility: visible;
+    }
+
+
+    /* Supaya sidebar bisa discroll kalau layar pendek */
+
+    .sidebar-custom {
+        overflow-y: auto !important;
+    }
+
+}
+
+/* ========================================
+   MOBILE SIDEBAR TOGGLE
+======================================== */
+
+.sidebar-toggle {
+    display: none;
+
+    border: 0;
+    background: transparent;
+
+    padding: 8px;
+
+    margin-right: 8px;
+
+    font-size: 24px;
+
+    color: #344054;
+
+    cursor: pointer;
+}
+
+
+/* ========================================
+   SIDEBAR OVERLAY
+======================================== */
+
+.sidebar-overlay {
+    display: none;
+}
+
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 767.98px) {
+
+    /* ================================
+       TOMBOL HAMBURGER
+    ================================= */
+
+    .sidebar-toggle {
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+
+        flex-shrink: 0;
+    }
+
+
+    /* ================================
+       NAVBAR
+    ================================= */
+
+    .navbar-custom .container-xl {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
+    /* ================================
+       SIDEBAR
+    ================================= */
+
+    .sidebar-custom {
+        transform: translateX(-100%);
+
+        transition: transform 0.25s ease;
+
+        z-index: 1050;
+
+        overflow-y: auto !important;
+    }
+
+
+    .sidebar-custom.sidebar-open {
+        transform: translateX(0);
+    }
+
+
+    /* ================================
+       PAGE WRAPPER
+    ================================= */
+
+    .page-wrapper {
+        width: 100% !important;
+
+        margin-left: 0 !important;
+    }
+
+
+    /* ================================
+       OVERLAY
+    ================================= */
+
+    .sidebar-overlay {
+        display: block;
+
+        position: fixed;
+
+        inset: 0;
+
+        background: rgba(0, 0, 0, 0.35);
+
+        z-index: 1040;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transition:
+            opacity 0.25s ease,
+            visibility 0.25s ease;
+    }
+
+
+    .sidebar-overlay.show {
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+    }
+
+
+    /* ================================
+       USER INFO
+    ================================= */
+
+    .navbar-user-info {
+        display: none;
+    }
+
+}
+
+/* ========================================
+   AUTH / LOGIN
+======================================== */
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F7F7F7;
+
+    padding: 20px;
+}
+
+
+.auth-container {
+    width: 100%;
+    max-width: 450px;
+}
+
+
+.auth-card {
+    width: 100%;
+}
+
+.auth-system-title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* =========================================
+   LOGO PERUSAHAAN - LOGIN
+========================================= */
+
+.auth-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+
+.auth-logo {
+    max-width: 220px;
+    max-height: 110px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.navbar-user-button {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+}
+
+.navbar-user-button:hover {
+    background: transparent;
+}
+
+/* ========================================
+   NAVBAR USER BUTTON
+======================================== */
+
+.navbar-user-button {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    border: none;
+    background: transparent;
+
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.navbar-user-button:hover {
+    background: #f5f7fa;
+}
+
+
+/* ========================================
+   NAVBAR AVATAR
+======================================== */
+
+.navbar-user-avatar {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #206bc4;
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* Avatar Guest */
+
+.navbar-user-avatar-guest {
+    background: #f0f2f5;
+
+    color: #667085;
+
+    font-size: 19px;
+}
+
+
+/* ========================================
+   USER INFORMATION
+======================================== */
+
+.navbar-user-info {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 100px;
+}
+
+
+.navbar-user-name {
+    font-size: 13px;
+    font-weight: 600;
+
+    line-height: 1.3;
+
+    color: #344054;
+}
+
+
+.navbar-user-role {
+    margin-top: 2px;
+
+    font-size: 11px;
+
+    line-height: 1.3;
+
+    color: #98a2b3;
+}
+
+
+/* ========================================
+   CHEVRON
+======================================== */
+
+.navbar-user-chevron {
+    font-size: 16px;
+
+    color: #98a2b3;
+
+    transition: transform 0.2s ease;
+}
+
+
+/* Putar panah ketika dropdown terbuka */
+
+.dropdown.show .navbar-user-chevron {
+    transform: rotate(180deg);
+}
+
+
+/* ========================================
+   ACCOUNT DROPDOWN
+======================================== */
+
+.navbar-account-dropdown {
+    width: 250px;
+
+    margin-top: 10px !important;
+
+    padding: 8px;
+
+    border: 1px solid #e6e8eb;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 12px 28px rgba(16, 24, 40, 0.12);
+}
+
+
+/* ========================================
+   DROPDOWN HEADER
+======================================== */
+
+.navbar-account-header {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 10px;
+}
+
+
+.navbar-account-avatar {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #206bc4;
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+/* Avatar Guest di dropdown */
+
+.navbar-account-avatar-guest {
+    background: #f0f2f5;
+
+    color: #667085;
+
+    font-size: 20px;
+}
+
+
+.navbar-account-name {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #344054;
+}
+
+
+.navbar-account-role {
+    margin-top: 2px;
+
+    font-size: 12px;
+
+    color: #98a2b3;
+}
+
+
+/* ========================================
+   DROPDOWN DIVIDER
+======================================== */
+
+.navbar-account-dropdown .dropdown-divider {
+    margin: 6px 0;
+
+    border-color: #eaecf0;
+}
+
+
+/* ========================================
+   DROPDOWN ITEM
+======================================== */
+
+.navbar-account-dropdown .dropdown-item {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 9px 10px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
+}
+
+
+.navbar-account-dropdown .dropdown-item i {
+    font-size: 17px;
+}
+
+
+/* ========================================
+   LOGIN BUTTON
+======================================== */
+
+.navbar-login-button {
+    color: #206bc4 !important;
+}
+
+
+.navbar-login-button:hover {
+    background: rgba(32, 107, 196, 0.08) !important;
+
+    color: #1a5aa5 !important;
+}
+
+
+/* ========================================
+   LOGOUT BUTTON
+======================================== */
+
+.navbar-logout-button {
+    border: none;
+
+    background: transparent;
+
+    color: #d63939 !important;
+
+    cursor: pointer;
+
+    text-align: left;
+}
+
+
+.navbar-logout-button:hover {
+    background: rgba(214, 57, 57, 0.08) !important;
+
+    color: #b52b2b !important;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 767.98px) {
+
+    .navbar-account-dropdown {
+        width: 230px;
+    }
+
+}
+
+/* =========================================
+   DASHBOARD STATISTIC CARD
+========================================= */
+
+.dashboard-stat-card {
+    height: 100%;
+    border: 1px solid #e6e8eb;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s ease;
+}
+
+
+.dashboard-stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* HEADER */
+
+.dashboard-stat-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+
+/* ICON */
+
+.dashboard-stat-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #eef4fb;
+    color: #206bc4;
+
+    font-size: 26px;
+
+    flex-shrink: 0;
+}
+
+
+.dashboard-stat-content {
+    min-width: 0;
+}
+
+
+/* JUDUL */
+
+.dashboard-stat-title {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 4px;
+}
+
+
+/* ANGKA */
+
+.dashboard-stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1f2937;
+}
+
+
+/* DESKRIPSI */
+
+.dashboard-stat-description {
+    margin-top: 18px;
+    padding-top: 14px;
+
+    border-top: 1px solid #eef0f2;
+
+    font-size: 13px;
+    color: #8b949e;
+}
+
+/* ========================================
+   HEADER RIWAYAT PENGENDALIAN
+======================================== */
+
+.inventory-history-header {
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+.inventory-history-header-image {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border: 1px solid #adb5bd;
+}
+
+/* ========================================
+   HEADER MASTER SARANA INVENTARIS
+======================================== */
+
+.master-history-header {
+    display: flex;
+    justify-content: center;
+
+    margin: 8px 0 18px;
+}
+
+.master-history-header-image {
+    display: block;
+
+    width: 100%;
+    max-width: 1225px;
+
+    height: auto;
+
+    border: 1px solid #adb5bd;
+}
+
+.master-kop-wrapper {
+    width: 100%;
+}
+
+.master-kop {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.master-table-container {
+    margin-top: 40px !important;
+}
